@@ -80,6 +80,9 @@ The home screen is not a feed. It's a peaceful, nearly empty screen:
 - **Friends feed (a tab):** today's finalized photos from your friends,
   grouped by friend → day, chronological, no algorithm, no ads. Tap a
   friend's day to see their shared photos + captions for that day.
+  Missed days are catch-up-able, but visually separated: **Today** is its
+  own section at the top, and earlier missed days live below under a
+  clear **Catch up** divider, so "now" never blurs into "backlog".
 - **Friend profile = their calendar**, scrolled month by month, same
   cover language as yours: photo cover where they shared one, nothing
   where they didn't. (A text-only day shows *nothing* on a friend's
@@ -118,13 +121,21 @@ Day `status`, which is the gate's state.
   on the calendar as one connected block, opened like a single day.
   Fits "collecting" naturally: the tray just spans several days.
 
+## Decisions (Catherine, 2026-11-13)
+
+1. **Photos-only counts.** Finalizing does not require text — a
+   photos-only day is a real entry (and so is a deliberate rest day).
+2. **Edit / unpublish after finalizing: yes.** A finalized day can be
+   reopened, edited, and unpublished. (Time limits, if any, TBD.)
+3. **Friends feed allows catch-up**, with a clear visual separation
+   between Today and previous missed days (see Friends feed above).
+4. Both design tweaks accepted: generous definition of "entry" with no
+   streak shaming, and no marker at all on a friend's calendar for
+   text-only days.
+
 ## Open questions (parked, decide later)
 
-1. Does finalizing *require* text, or does a photos-only finalize count
-   as an entry? (Design above assumes photos-only counts.)
-2. Can you edit or unpublish a day after finalizing? Until when?
-3. Friends feed: only today's days, or a catch-up of days you missed?
-4. Default visibility when finalizing: all-private with opt-ins per
+1. Default visibility when finalizing: all-private with opt-ins per
    photo (assumed), or remember last time's choices?
-5. What exactly do likes/comments look like so they stay friendly
-   rather than performative?
+2. What exactly do likes/comments look like so they stay friendly
+   rather than performative? — explicitly deferred.
