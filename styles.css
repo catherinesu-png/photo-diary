@@ -1,0 +1,94 @@
+:root {
+  --bg: #faf6ef;
+  --card: #ffffff;
+  --ink: #2b2620;
+  --muted: #8a7f70;
+  --accent: #c2577a;
+  --accent-dark: #a33f61;
+  --dot: #3d9970;
+  --line: #e7ded0;
+  --today-ring: #f0b429;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; flex-wrap: wrap; gap: 12px;
+}
+.topbar h1 { font-size: 28px; margin: 0; }
+.topbar-actions { display: flex; gap: 8px; }
+button, .import-label, .add-photos {
+  font-family: inherit; font-size: 15px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  border-radius: 999px; padding: 8px 16px;
+}
+button:hover, .import-label:hover, .add-photos:hover { border-color: var(--accent); color: var(--accent-dark); }
+main {
+  display: grid; grid-template-columns: minmax(320px, 520px) 1fr;
+  gap: 20px; padding: 0 24px 32px; align-items: start;
+}
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+.calendar-card, .day-card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 16px; padding: 20px;
+}
+.calendar-head { display: flex; align-items: center; gap: 10px; }
+.calendar-head h2 { flex: 1; text-align: center; margin: 0; font-size: 22px; }
+.weekdays, .calendar-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;
+}
+.weekdays { margin: 16px 0 6px; text-align: center; color: var(--muted); font-size: 13px; }
+.day-cell {
+  position: relative; aspect-ratio: 1; border: 1px solid var(--line);
+  border-radius: 10px; padding: 4px; text-align: left; overflow: hidden;
+  background: #fff; display: flex; flex-direction: column;
+}
+.day-cell.other-month { opacity: 0.35; }
+.day-cell.today { outline: 2px solid var(--today-ring); outline-offset: -2px; }
+.day-cell.selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+.day-cell .num { font-size: 13px; z-index: 1; background: rgba(255,255,255,0.85); border-radius: 6px; padding: 0 3px; align-self: flex-start; }
+.day-cell img.thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.day-cell .dot {
+  position: absolute; right: 6px; bottom: 6px; width: 9px; height: 9px;
+  border-radius: 50%; background: var(--dot); z-index: 1;
+  box-shadow: 0 0 0 2px #fff;
+}
+.legend { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+.legend .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--dot); }
+.day-card h2 { margin-top: 0; }
+.photos-head { display: flex; align-items: center; justify-content: space-between; }
+.photos-head h3, .writing-head { margin: 8px 0; }
+.add-photos { background: var(--accent); color: #fff; border-color: var(--accent); }
+.add-photos:hover { background: var(--accent-dark); color: #fff; }
+.muted { color: var(--muted); }
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.photo-wrap { position: relative; }
+.photo-wrap img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; display: block; cursor: zoom-in; }
+.photo-wrap .del {
+  position: absolute; top: 6px; right: 6px; width: 28px; height: 28px;
+  border-radius: 50%; padding: 0; line-height: 1; background: rgba(255,255,255,0.92);
+}
+textarea {
+  width: 100%; font-family: inherit; font-size: 17px; line-height: 1.55;
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px; resize: vertical;
+  background: #fffdf9; color: var(--ink);
+}
+.save-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+#saveBtn { background: var(--accent); border-color: var(--accent); color: #fff; }
+#saveBtn:hover { background: var(--accent-dark); color: #fff; }
+.save-status { color: var(--dot); font-size: 14px; }
+.lightbox {
+  position: fixed; inset: 0; background: rgba(20, 15, 10, 0.92);
+  display: flex; align-items: center; justify-content: center; z-index: 50;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 92vw; max-height: 92vh; border-radius: 8px; }
+#lightboxClose {
+  position: absolute; top: 16px; right: 20px; font-size: 26px;
+  width: 44px; height: 44px; border-radius: 50%;
+}
