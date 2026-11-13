@@ -1,15 +1,15 @@
 # Photo Diary
 
-A photo diary: every day you can upload photos and write an entry, and a
-calendar lets you click any day to see that day's photos with the writing
-underneath them.
+Every day you can upload photos and write an entry, and a
+calendar lets you click any day to see that day's photos with an optional 
+journal entry underneath them.
 
 Days with photos show a thumbnail in the calendar; days with writing show a
-green dot. Click a photo to see it full-screen; each photo can be deleted.
+green dot. Click a day to see its photos full-screen. Each photo can be deleted.
 
 ## Run it
 
-It's a plain static site — no build step, no server.
+It's a plain static site.
 
 - **Locally:** open `index.html` in a browser (or serve the folder, e.g.
   `python3 -m http.server`).
@@ -17,7 +17,7 @@ It's a plain static site — no build step, no server.
   branch" → `main` / `(root)`. The site then lives at
   `https://catherinesu-png.github.io/photo-diary/`.
 
-## Where your data lives — important
+## Where the data lives
 
 The code lives in this repository. **Your photos and writing do not.**
 
@@ -45,8 +45,7 @@ storage layer in `app.js` would change.
 ## Roadmap — later, not in this version
 
 Right now this is a **non-social, private photo journaling app**. The
-framework is being built first. Long-term ideas (Catherine's, 2026-11-13),
-in no promised order:
+framework is being built first. Long-term ideas in no particular order:
 
 - **Social layer:** choose per photo whether it is visible to friends or
   public. Friends can open each other's profiles, which show a calendar
@@ -64,12 +63,3 @@ in no promised order:
 To keep those possible without a rewrite, photo records already store a
 `caption` (empty for now) and a `visibility` (`"private"` for now) from
 day one, and diary text is stored separately from photos.
-
-## Note on the Muse version
-
-This is a standalone rewrite of the Photo Diary that was first built as an
-interactive app inside Muse. That version is hosted in Muse's own
-environment with its own database, and interactive Muse apps can't be
-published or exported as-is — so this repository re-implements the same
-diary (calendar, daily photos, writing underneath) in plain
-HTML/CSS/JavaScript that runs anywhere.
