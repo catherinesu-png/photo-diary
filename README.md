@@ -59,6 +59,10 @@ framework is being built first. Long-term ideas in no particular order:
 - **Vacation mode:** upload photos for a block of time at once; on the
   calendar those days show as one connected block of photos that opens the
   same way as a regular single day.
+- **Calendar sync + prompts:** sync with the user's real calendar so the
+  app can prompt what to write about and which photos to add based on what
+  their day actually contained. Exact mechanics undecided — to figure out
+  later.
 
 To keep those possible without a rewrite, photo records already store a
 `caption` (empty for now) and a `visibility` (`"private"` for now) from
